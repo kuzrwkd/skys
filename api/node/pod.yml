@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: api
+spec:
+  containers:
+    - name: express
+      image: market-navi-api:express
+      imagePullPolicy: Never
