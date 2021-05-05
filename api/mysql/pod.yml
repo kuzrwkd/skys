@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: database
+spec:
+  containers:
+    - name: mysql
+      image: investment-support-api:mysql5.7
+      imagePullPolicy: Never
+      volumeMounts:
+        - name: mysql-init
+          mountPath: /docker-entrypoint-initdb.d
+        - name: mysql-conf
+          mountPath: /etc/mysql/conf.d
+      env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: password
+        - name: TZ
+          value: Asia/Tokyo
+  volumes:
+    - name: mysql-init
+      configMap:
+        name: db-init
+        items:
+          - key: initdb.sql
+            path: initdb.sql
+    - name: mysql-conf
+      configMap:
+        name: db-conf
+        items:
+          - key: my.cnf
+            path: my.cnf
