@@ -5,5 +5,12 @@ metadata:
 spec:
   containers:
     - name: express
-      image: market-navi-api:express
+      image: sky-api:express
       imagePullPolicy: Never
+      volumeMounts:
+        - name: express-app
+          mountPath: /var/www
+  volumes:
+    - name: express-app
+      hostPath:
+        path: /Users/hiroki/Project/investment-support-kubernetes/api/sky-api
