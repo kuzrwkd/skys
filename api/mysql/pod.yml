@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
     - name: mysql
-      image: investment-support-api:mysql5.7
+      image: sky-api:mysql5.7
       imagePullPolicy: Never
       volumeMounts:
         - name: mysql-init

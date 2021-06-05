@@ -1,0 +1,3 @@
+[submodule "api/skys-api"]
+	path = api/skys-api
+	url = git@github.com:kuzrwkd/skys-api.git
