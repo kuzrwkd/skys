@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: mysql
-          image: skys-api:mysql8.0
+          image: skys-scraper:mysql8.0
           imagePullPolicy: Never
           volumeMounts:
             - name: skys-scraper-mysql-init

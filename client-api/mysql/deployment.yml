@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: skys-api-db-dep
+  name: skys-client-api-db-dep
 spec:
   selector:
     matchLabels:
-      app: skys-api-db
+      app: skys-client-api-db
   strategy:
     type: Recreate
   template:
     metadata:
-      name: skys-api-db-pod
+      name: skys-client-api-db-pod
       labels:
-        app: skys-api-db
+        app: skys-client-api-db
     spec:
       containers:
         - name: mysql
-          image: skys-api:mysql8.0
+          image: skys-client-api:mysql8.0
           imagePullPolicy: Never
           volumeMounts:
             - name: mysql-init

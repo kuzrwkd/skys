@@ -2,14 +2,14 @@
 # build
 #
 build-all:
-	docker build --no-cache -t skys-api:mysql8.0 client-api/mysql/docker
-	docker build --no-cache -t skys-api:nestjs client-api/node/docker
+	docker build --no-cache -t skys-client-api:mysql8.0 client-api/mysql/docker
+	docker build --no-cache -t skys-client-api:nestjs client-api/node/docker
 	docker build --no-cache -t skys-scraper:mysql8.0 scraper/mysql/docker
 	docker build --no-cache -t skys-scraper:puppeteer scraper/node/docker
 
 build-api:
-	docker build --no-cache -t skys-api:mysql8.0 client-api/mysql/docker
-	docker build --no-cache -t skys-api:nestjs client-api/node/docker
+	docker build --no-cache -t skys-client-api:mysql8.0 client-api/mysql/docker
+	docker build --no-cache -t skys-client-api:nestjs client-api/node/docker
 
 build-scraper:
 	docker build --no-cache -t skys-scraper:mysql8.0 scraper/mysql/docker
@@ -19,14 +19,14 @@ build-scraper:
 # clean
 #
 clean-all:
-	docker rmi skys-api:nestjs
-	docker rmi skys-api:mysql8.0
+	docker rmi skys-client-api:nestjs
+	docker rmi skys-client-api:mysql8.0
 	docker rmi skys-scraper:puppeteer
 	docker rmi skys-scraper:mysql8.0
 
 clean-api:
-	docker rmi skys-api:nestjs
-	docker rmi skys-api:mysql8.0
+	docker rmi skys-client-api:nestjs
+	docker rmi skys-client-api:mysql8.0
 
 clean-scraper:
 	docker rmi skys-scraper:puppeteer
@@ -90,6 +90,9 @@ delete-scraper:
 	kubectl delete -f scraper/node/deployment.yml
 	kubectl delete -f scraper/node/service.yml
 
+##
+# dashboard
+#
 dashboard:
 	kubectl apply -f dashboard-adminuser.yaml
 	kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.3.0/aio/deploy/recommended.yaml

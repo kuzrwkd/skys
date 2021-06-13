@@ -4,7 +4,7 @@ metadata:
   name: db-init
 data:
   initdb.sql: |
-    CREATE DATABASE IF NOT EXISTS `skys`;
+    CREATE DATABASE IF NOT EXISTS `skys-client-api`;
     CREATE USER 'skys-client-api'@'%' IDENTIFIED BY 'password';
     GRANT ALL ON skys.* TO 'skys-client-api'@'%';
 

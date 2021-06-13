@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: skys-api-app-dep
+  name: skys-client-api-app-dep
 spec:
   selector:
     matchLabels:
-      app: skys-api-app
+      app: skys-client-api-app
   strategy:
     type: Recreate
   template:
     metadata:
-      name: skys-api-app-pod
+      name: skys-client-api-app-pod
       labels:
-        app: skys-api-app
+        app: skys-client-api-app
     spec:
       containers:
         - name: nestjs
-          image: skys-api:nestjs
+          image: skys-client-api:nestjs
           imagePullPolicy: Never
           volumeMounts:
             - name: nestjs-app

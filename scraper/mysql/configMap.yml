@@ -4,7 +4,7 @@ metadata:
   name: skys-scraper-db-init
 data:
   initdb.sql: |
-    CREATE DATABASE IF NOT EXISTS `skys`;
+    CREATE DATABASE IF NOT EXISTS `skys-scraper`;
     CREATE USER 'skys-scraper'@'%' IDENTIFIED BY 'password';
     GRANT ALL ON skys.* TO 'skys-scraper'@'%';
 
