@@ -1,10 +1,10 @@
 build:
-	docker build --no-cache -t skys-api:mysql5.7 api/mysql/docker
+	docker build --no-cache -t skys-api:mysql8.0 api/mysql/docker
 	docker build --no-cache -t skys-api:nestjs api/node/docker
 
 clean:
 	docker rmi skys-api:nestjs
-	docker rmi skys-api:mysql5.7
+	docker rmi skys-api:mysql8.0
 
 apply:
 	kubectl apply -f api/mysql/configMap.yml

@@ -26,5 +26,5 @@ spec:
       volumes:
         - name: nestjs-app
           hostPath:
-            path: "*****************"
+            path: /Users/hiroki/Project/skys/api/app
             type: DirectoryOrCreate
