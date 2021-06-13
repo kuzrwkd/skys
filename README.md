@@ -1,1 +1,1 @@
-# SKY NETWORK
+# SKYS（相場観察予想システム）

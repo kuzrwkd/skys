@@ -2,12 +2,12 @@ FROM node:15.11.0
 
 WORKDIR /var/www
 
-COPY entrypoint.sh /
+COPY entrypoint.sh /usr/local/bin
 
-COPY wait-for-it.sh /
+COPY wait-for-it.sh /usr/local/bin
 
-RUN chmod +x /entrypoint.sh \
-    && chmod +x /wait-for-it.sh \
+RUN chmod +x /usr/local/bin/entrypoint.sh \
+    && chmod +x /usr/local/bin/wait-for-it.sh \
     && npm install -g npm \
     && npm install -g pm2 \
     && npm install -g ts-node \
@@ -15,6 +15,4 @@ RUN chmod +x /entrypoint.sh \
     && npm install -g @nestjs/cli \
     && npm install -g prisma
 
-EXPOSE 3000
-
-#ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
