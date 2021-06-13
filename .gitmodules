@@ -7,3 +7,6 @@
 [submodule "client/app"]
 	path = client/app
 	url = git@github.com:kuzrwkd/skys-client.git
+[submodule "search/app"]
+	path = search/app
+	url = git@github.com:kuzrwkd/skys-search.git
