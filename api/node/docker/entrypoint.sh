@@ -18,6 +18,6 @@ ncu \
 && npm install \
 && npm run build
 
-/wait-for-it.sh "$DATABASE_HOST":"$DATABASE_PORT" --timeout=30 --strict -- prisma db push
+/usr/local/bin/wait-for-it.sh "$DATABASE_HOST":"$DATABASE_PORT" --timeout=30 --strict -- prisma db push
 
 npm run start:dev

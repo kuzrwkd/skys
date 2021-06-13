@@ -23,8 +23,6 @@ spec:
               mountPath: /docker-entrypoint-initdb.d
             - name: mysql-conf
               mountPath: /etc/mysql/conf.d
-            - name: mysql-log
-              mountPath: /var/log/mysql
           env:
             - name: MYSQL_ROOT_PASSWORD
               value: password
@@ -45,7 +43,3 @@ spec:
             items:
               - key: my.cnf
                 path: my.cnf
-        - name: mysql-log
-          hostPath:
-            path: "*****************"
-            type: DirectoryOrCreate

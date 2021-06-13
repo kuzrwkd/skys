@@ -3,9 +3,10 @@ kind: Service
 metadata:
   name: skys-api-db-svc
 spec:
+  type: NodePort
   selector:
     app: skys-api-db
   ports:
     - port: 3306
       targetPort: 3306
-  clusterIP: None
+      nodePort: 30306
