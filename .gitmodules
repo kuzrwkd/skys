@@ -10,3 +10,9 @@
 [submodule "client-api/app"]
 	path = client-api/app
 	url = git@github.com:kuzrwkd/skys-client-api.git
+[submodule "back-office/app"]
+	path = back-office/app
+	url = git@github.com:kuzrwkd/skys-back-office.git
+[submodule "front-office/app"]
+	path = front-office/app
+	url = git@github.com:kuzrwkd/skys-front-office.git
