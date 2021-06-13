@@ -42,3 +42,15 @@ kubectl -n kubernetes-dashboard get secret $(kubectl -n kubernetes-dashboard get
 ```
 open http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 ```
+
+## git submodule トラブルシューティング
+
+**`git submodule foreach git commit` などで、既にコミット済みのmoduleがあるとそこで処理が終了する**
+
+**対策**
+
+`|| :` をつける
+
+```
+git submodule foreach 'git commit || :'
+```
