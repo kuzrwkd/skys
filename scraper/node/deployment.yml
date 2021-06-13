@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: skys-scraper-app-dep
+spec:
+  selector:
+    matchLabels:
+      app: skys-scraper-app
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      name: skys-scraper-app-pod
+      labels:
+        app: skys-scraper-app
+    spec:
+      containers:
+        - name: nestjs
+          image: skys-scraper:puppeteer
+          imagePullPolicy: Never
+          volumeMounts:
+            - name: puppeteer-app
+              mountPath: /var/www
+          ports:
+            - containerPort: 3000
+      volumes:
+        - name: puppeteer-app
+          hostPath:
+            path: /Users/hiroki/Project/skys/scraper/app
+            type: DirectoryOrCreate
