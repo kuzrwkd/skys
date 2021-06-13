@@ -16,3 +16,6 @@
 [submodule "front-office/app"]
 	path = front-office/app
 	url = git@github.com:kuzrwkd/skys-front-office.git
+[submodule "auth/app"]
+	path = auth/app
+	url = git@github.com:kuzrwkd/skys-auth.git
