@@ -5,8 +5,8 @@ metadata:
 data:
   initdb.sql: |
     CREATE DATABASE IF NOT EXISTS `skys`;
-    CREATE USER 'skys-api'@'%' IDENTIFIED BY 'password';
-    GRANT ALL ON skys.* TO 'skys-api'@'%';
+    CREATE USER 'skys-client-api'@'%' IDENTIFIED BY 'password';
+    GRANT ALL ON skys.* TO 'skys-client-api'@'%';
 
 ---
 

@@ -1,6 +1,3 @@
-[submodule "api/app"]
-	path = api/app
-	url = git@github.com:kuzrwkd/skys-api.git
 [submodule "scraper/app"]
 	path = scraper/app
 	url = git@github.com:kuzrwkd/skys-scraper.git
@@ -10,3 +7,6 @@
 [submodule "search/app"]
 	path = search/app
 	url = git@github.com:kuzrwkd/skys-search.git
+[submodule "client-api/app"]
+	path = client-api/app
+	url = git@github.com:kuzrwkd/skys-client-api.git

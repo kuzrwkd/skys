@@ -19,9 +19,9 @@ spec:
           image: skys-api:mysql8.0
           imagePullPolicy: Never
           volumeMounts:
-            - name: mysql-init
+            - name: skys-scraper-mysql-init
               mountPath: /docker-entrypoint-initdb.d
-            - name: mysql-conf
+            - name: skys-scraper-mysql-conf
               mountPath: /etc/mysql/conf.d
           env:
             - name: MYSQL_ROOT_PASSWORD
@@ -31,15 +31,15 @@ spec:
           ports:
             - containerPort: 3306
       volumes:
-        - name: mysql-init
+        - name: skys-scraper-mysql-init
           configMap:
-            name: db-init
+            name: skys-scraper-db-init
             items:
               - key: initdb.sql
                 path: initdb.sql
-        - name: mysql-conf
+        - name: skys-scraper-mysql-conf
           configMap:
-            name: db-conf
+            name: skys-scraper-db-conf
             items:
               - key: my.cnf
                 path: my.cnf
