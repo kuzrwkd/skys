@@ -35,6 +35,18 @@ clean-scraper:
 ##
 # apply
 #
+apply-all:
+	kubectl apply -f api/mysql/configMap.yml
+	kubectl apply -f api/mysql/deployment.yml
+	kubectl apply -f api/mysql/service.yml
+	kubectl apply -f api/node/deployment.yml
+	kubectl apply -f api/node/service.yml
+	kubectl apply -f scraper/mysql/configMap.yml
+	kubectl apply -f scraper/mysql/deployment.yml
+	kubectl apply -f scraper/mysql/service.yml
+	kubectl apply -f scraper/node/deployment.yml
+	kubectl apply -f scraper/node/service.yml
+
 apply-api:
 	kubectl apply -f api/mysql/configMap.yml
 	kubectl apply -f api/mysql/deployment.yml
@@ -52,6 +64,18 @@ apply-scraper:
 ##
 # delete
 #
+delete-all:
+	kubectl delete -f api/mysql/configMap.yml
+	kubectl delete -f api/mysql/deployment.yml
+	kubectl delete -f api/mysql/service.yml
+	kubectl delete -f api/node/deployment.yml
+	kubectl delete -f api/node/service.yml
+	kubectl delete -f scraper/mysql/configMap.yml
+	kubectl delete -f scraper/mysql/deployment.yml
+	kubectl delete -f scraper/mysql/service.yml
+	kubectl delete -f scraper/node/deployment.yml
+	kubectl delete -f scraper/node/service.yml
+
 delete-api:
 	kubectl delete -f api/mysql/configMap.yml
 	kubectl delete -f api/mysql/deployment.yml
