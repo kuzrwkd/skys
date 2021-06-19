@@ -15,7 +15,7 @@ spec:
         app: skys-scraper-app
     spec:
       containers:
-        - name: nestjs
+        - name: skys-scraper-app
           image: skys-scraper:puppeteer-with-nestjs
           imagePullPolicy: Never
           volumeMounts:

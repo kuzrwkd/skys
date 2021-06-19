@@ -15,7 +15,7 @@ spec:
         app: skys-scraper-db
     spec:
       containers:
-        - name: mysql
+        - name: skys-scraper-db
           image: skys-scraper:mysql8.0
           imagePullPolicy: Never
           volumeMounts:

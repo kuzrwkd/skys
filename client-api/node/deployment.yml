@@ -15,7 +15,7 @@ spec:
         app: skys-client-api-app
     spec:
       containers:
-        - name: nestjs
+        - name: skys-client-api-app
           image: skys-client-api:nestjs
           imagePullPolicy: Never
           volumeMounts:
