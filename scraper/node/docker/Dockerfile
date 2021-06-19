@@ -40,7 +40,8 @@ RUN apt-get update \
     libxtst6 \
     lsb-release \
     wget \
-    xdg-utils
+    xdg-utils \
+    procps
 
 COPY entrypoint.sh /usr/local/bin
 

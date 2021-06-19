@@ -4,7 +4,8 @@ WORKDIR /var/www
 
 RUN apt-get update \
     && apt-get install -y \
-    libssl-dev
+    libssl-dev \
+    procps
 
 COPY entrypoint.sh /usr/local/bin
 
