@@ -19,3 +19,9 @@
 [submodule "scraper/app"]
 	path = scraper/app
 	url = git@github.com:kuzrwkd/skys-scraper.git
+[submodule "back-office-api/app"]
+	path = back-office-api/app
+	url = git@github.com:kuzrwkd/skys-back-office-api.git
+[submodule "front-office-api/app"]
+	path = front-office-api/app
+	url = git@github.com:kuzrwkd/skys-front-office-api.git
