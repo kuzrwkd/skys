@@ -13,9 +13,7 @@ if [ -e '.env' ]; then
   source .env
 fi
 
-ncu \
-&& ncu -u \
-&& npm install \
+npm install \
 && npm run build
 
 /usr/local/bin/wait-for-it.sh "$DATABASE_HOST":"$DATABASE_PORT" --timeout=30 --strict -- prisma db push

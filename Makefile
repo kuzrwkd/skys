@@ -5,15 +5,15 @@ build-all:
 	docker build --no-cache -t skys-client-api:mysql8.0 client-api/mysql/docker
 	docker build --no-cache -t skys-client-api:nestjs client-api/node/docker
 	docker build --no-cache -t skys-scraper:mysql8.0 scraper/mysql/docker
-	docker build --no-cache -t skys-scraper:puppeteer scraper/node/docker
+	docker build --no-cache -t skys-scraper:puppeteer-with-nestjs scraper/node/docker
 
-build-api:
+build-client-api:
 	docker build --no-cache -t skys-client-api:mysql8.0 client-api/mysql/docker
 	docker build --no-cache -t skys-client-api:nestjs client-api/node/docker
 
 build-scraper:
 	docker build --no-cache -t skys-scraper:mysql8.0 scraper/mysql/docker
-	docker build --no-cache -t skys-scraper:puppeteer scraper/node/docker
+	docker build --no-cache -t skys-scraper:puppeteer-with-nestjs scraper/node/docker
 
 ##
 # clean
@@ -21,15 +21,15 @@ build-scraper:
 clean-all:
 	docker rmi skys-client-api:nestjs
 	docker rmi skys-client-api:mysql8.0
-	docker rmi skys-scraper:puppeteer
+	docker rmi skys-scraper:puppeteer-with-nestjs
 	docker rmi skys-scraper:mysql8.0
 
-clean-api:
+clean-client-api:
 	docker rmi skys-client-api:nestjs
 	docker rmi skys-client-api:mysql8.0
 
 clean-scraper:
-	docker rmi skys-scraper:puppeteer
+	docker rmi skys-scraper:puppeteer-with-nestjs
 	docker rmi skys-scraper:mysql8.0
 
 ##
@@ -47,7 +47,7 @@ apply-all:
 	kubectl apply -f scraper/node/deployment.yml
 	kubectl apply -f scraper/node/service.yml
 
-apply-api:
+apply-client-api:
 	kubectl apply -f client-api/mysql/configMap.yml
 	kubectl apply -f client-api/mysql/deployment.yml
 	kubectl apply -f client-api/mysql/service.yml
