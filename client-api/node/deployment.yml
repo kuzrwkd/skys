@@ -19,17 +19,18 @@ spec:
           image: skys-client-api:nestjs
           imagePullPolicy: Never
           volumeMounts:
-            - name: nestjs-app
+            - name: skys-client-api-app
               mountPath: /var/www
-            - name: npm-log
+            - name: skys-client-api-npm-log
               mountPath: /root/.npm/_logs
           ports:
             - containerPort: 3000
       volumes:
-        - name: nestjs-app
+        - name: skys-client-api-app
           hostPath:
-            path: /Users/hiroki/Project/skys/client-api/app
+            path: /Users/hiroki/Project/skys-client-api
             type: DirectoryOrCreate
-        - name: npm-log
+        - name: skys-client-api-npm-log
           hostPath:
-            path: /Users/hiroki/Project/skys/client-api/app/logs/npm
+            path: /Users/hiroki/Project/skys-client-api/logs/npm
+            type: DirectoryOrCreate

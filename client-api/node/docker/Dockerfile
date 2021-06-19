@@ -2,6 +2,10 @@ FROM node:16.3-slim
 
 WORKDIR /var/www
 
+RUN apt-get update \
+    && apt-get install -y \
+    libssl-dev
+
 COPY entrypoint.sh /usr/local/bin
 
 COPY wait-for-it.sh /usr/local/bin

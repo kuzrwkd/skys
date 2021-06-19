@@ -76,7 +76,7 @@ delete-all:
 	kubectl delete -f scraper/node/deployment.yml
 	kubectl delete -f scraper/node/service.yml
 
-delete-api:
+delete-client-api:
 	kubectl delete -f client-api/mysql/configMap.yml
 	kubectl delete -f client-api/mysql/deployment.yml
 	kubectl delete -f client-api/mysql/service.yml

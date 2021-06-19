@@ -19,17 +19,18 @@ spec:
           image: skys-scraper:puppeteer-with-nestjs
           imagePullPolicy: Never
           volumeMounts:
-            - name: puppeteer-app
+            - name: skys-scraper-app
               mountPath: /var/www
-            - name: npm-log
+            - name: skys-scraper-app-npm-log
               mountPath: /root/.npm/_logs
           ports:
             - containerPort: 3000
       volumes:
-        - name: puppeteer-app
+        - name: skys-scraper-app
           hostPath:
-            path: /Users/hiroki/Project/skys/scraper/app
+            path: /Users/hiroki/Project/skys-scraper
             type: DirectoryOrCreate
-        - name: npm-log
+        - name: skys-scraper-app-npm-log
           hostPath:
-            path: /Users/hiroki/Project/skys/client-api/app/logs/npm
+            path: /Users/hiroki/Project/skys-scraper/logs/npm
+            type: DirectoryOrCreate
