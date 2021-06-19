@@ -25,3 +25,9 @@
 [submodule "front-office-api/app"]
 	path = front-office-api/app
 	url = git@github.com:kuzrwkd/skys-front-office-api.git
+[submodule "analyze/app"]
+	path = analyze/app
+	url = git@github.com:kuzrwkd/skys-analyze.git
+[submodule "recommend/app"]
+	path = recommend/app
+	url = git@github.com:kuzrwkd/skys-recommend.git
