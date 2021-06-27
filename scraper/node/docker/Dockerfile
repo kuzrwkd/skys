@@ -41,7 +41,9 @@ RUN apt-get update \
     lsb-release \
     wget \
     xdg-utils \
-    procps
+    procps \
+    fonts-ipafont-gothic \
+    fonts-ipafont-mincho
 
 COPY entrypoint.sh /usr/local/bin
 
