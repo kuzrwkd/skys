@@ -39,26 +39,26 @@ apply-all:
 	kubectl apply -f client-api/mysql/configMap.yml
 	kubectl apply -f client-api/mysql/deployment.yml
 	kubectl apply -f client-api/mysql/service.yml
-	kubectl apply -f client-api/node/deployment.yml
+	kubectl apply -f client-api/node/pod.yml
 	kubectl apply -f client-api/node/service.yml
 	kubectl apply -f scraper/mysql/configMap.yml
 	kubectl apply -f scraper/mysql/deployment.yml
 	kubectl apply -f scraper/mysql/service.yml
-	kubectl apply -f scraper/node/deployment.yml
+	kubectl apply -f scraper/node/pod.yml
 	kubectl apply -f scraper/node/service.yml
 
 apply-client-api:
 	kubectl apply -f client-api/mysql/configMap.yml
 	kubectl apply -f client-api/mysql/deployment.yml
 	kubectl apply -f client-api/mysql/service.yml
-	kubectl apply -f client-api/node/deployment.yml
+	kubectl apply -f client-api/node/pod.yml
 	kubectl apply -f client-api/node/service.yml
 
 apply-scraper:
 	kubectl apply -f scraper/mysql/configMap.yml
 	kubectl apply -f scraper/mysql/deployment.yml
 	kubectl apply -f scraper/mysql/service.yml
-	kubectl apply -f scraper/node/deployment.yml
+	kubectl apply -f scraper/node/pod.yml
 	kubectl apply -f scraper/node/service.yml
 
 ##
@@ -68,26 +68,26 @@ delete-all:
 	kubectl delete -f client-api/mysql/configMap.yml
 	kubectl delete -f client-api/mysql/deployment.yml
 	kubectl delete -f client-api/mysql/service.yml
-	kubectl delete -f client-api/node/deployment.yml
+	kubectl delete -f client-api/node/pod.yml
 	kubectl delete -f client-api/node/service.yml
 	kubectl delete -f scraper/mysql/configMap.yml
 	kubectl delete -f scraper/mysql/deployment.yml
 	kubectl delete -f scraper/mysql/service.yml
-	kubectl delete -f scraper/node/deployment.yml
+	kubectl delete -f scraper/node/pod.yml
 	kubectl delete -f scraper/node/service.yml
 
 delete-client-api:
 	kubectl delete -f client-api/mysql/configMap.yml
 	kubectl delete -f client-api/mysql/deployment.yml
 	kubectl delete -f client-api/mysql/service.yml
-	kubectl delete -f client-api/node/deployment.yml
+	kubectl delete -f client-api/node/pod.yml
 	kubectl delete -f client-api/node/service.yml
 
 delete-scraper:
 	kubectl delete -f scraper/mysql/configMap.yml
 	kubectl delete -f scraper/mysql/deployment.yml
 	kubectl delete -f scraper/mysql/service.yml
-	kubectl delete -f scraper/node/deployment.yml
+	kubectl delete -f scraper/node/pod.yml
 	kubectl delete -f scraper/node/service.yml
 
 ##
