@@ -12,10 +12,13 @@ cd /var/www
 if [ -e '.env' ]; then
   source .env
 fi
+
 npm cache clean -f \
 && npm install \
 && node node_modules/puppeteer/install.js
 
 /usr/local/bin/wait-for-it.sh "$DATABASE_HOST":"$DATABASE_PORT" --timeout=30 --strict -- prisma db push
+
+prisma db seed --preview-feature
 
 npm run start:dev

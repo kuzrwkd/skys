@@ -13,8 +13,8 @@ if [ -e '.env' ]; then
   source .env
 fi
 
-npm install \
-&& npm run build
+npm cache clean -f \
+&& npm install \
 
 /usr/local/bin/wait-for-it.sh "$DATABASE_HOST":"$DATABASE_PORT" --timeout=30 --strict -- prisma db push
 
