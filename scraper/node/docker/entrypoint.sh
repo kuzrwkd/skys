@@ -21,4 +21,11 @@ npm cache clean -f \
 
 prisma db seed --preview-feature
 
-npm run start:dev
+if [ "$ENV" == 'local' ]; then
+  # ローカル環境用
+  npm run start:dev
+else
+  # 本番環境用
+  pm2 start ecosystem.config.js
+  while true; do sleep 86400; done
+fi
