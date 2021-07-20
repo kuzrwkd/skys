@@ -2,10 +2,14 @@
 # build
 #
 build-all:
+	docker build --no-cache -t skys-client:nextjs client/node/docker
 	docker build --no-cache -t skys-client-api:mysql8.0 client-api/mysql/docker
 	docker build --no-cache -t skys-client-api:nestjs client-api/node/docker
 	docker build --no-cache -t skys-scraper:mysql8.0 scraper/mysql/docker
 	docker build --no-cache -t skys-scraper:puppeteer-with-nestjs scraper/node/docker
+
+build-client:
+	docker build --no-cache -t skys-client:nextjs client/node/docker
 
 build-client-api:
 	docker build --no-cache -t skys-client-api:mysql8.0 client-api/mysql/docker
@@ -19,10 +23,14 @@ build-scraper:
 # clean
 #
 clean-all:
+	docker rmi skys-client:nextjs
 	docker rmi skys-client-api:nestjs
 	docker rmi skys-client-api:mysql8.0
 	docker rmi skys-scraper:puppeteer-with-nestjs
 	docker rmi skys-scraper:mysql8.0
+
+clean-client:
+	docker rmi skys-client:nextjs
 
 clean-client-api:
 	docker rmi skys-client-api:nestjs
@@ -36,6 +44,8 @@ clean-scraper:
 # apply
 #
 apply-all:
+	kubectl apply -f client/node/pod.yml
+	kubectl apply -f client/node/service.yml
 	kubectl apply -f client-api/mysql/configMap.yml
 	kubectl apply -f client-api/mysql/deployment.yml
 	kubectl apply -f client-api/mysql/service.yml
@@ -46,6 +56,10 @@ apply-all:
 	kubectl apply -f scraper/mysql/service.yml
 	kubectl apply -f scraper/node/pod.yml
 	kubectl apply -f scraper/node/service.yml
+
+apply-client:
+	kubectl apply -f client/node/pod.yml
+	kubectl apply -f client/node/service.yml
 
 apply-client-api:
 	kubectl apply -f client-api/mysql/configMap.yml
@@ -65,6 +79,8 @@ apply-scraper:
 # delete
 #
 delete-all:
+	kubectl delete -f client/node/pod.yml
+	kubectl delete -f client/node/service.yml
 	kubectl delete -f client-api/mysql/configMap.yml
 	kubectl delete -f client-api/mysql/deployment.yml
 	kubectl delete -f client-api/mysql/service.yml
@@ -75,6 +91,10 @@ delete-all:
 	kubectl delete -f scraper/mysql/service.yml
 	kubectl delete -f scraper/node/pod.yml
 	kubectl delete -f scraper/node/service.yml
+
+delete-client:
+	kubectl delete -f client/node/pod.yml
+	kubectl delete -f client/node/service.yml
 
 delete-client-api:
 	kubectl delete -f client-api/mysql/configMap.yml
