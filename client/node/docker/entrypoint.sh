@@ -18,7 +18,8 @@ npm cache clean -f \
 
 if [ "$ENV" == 'local' ]; then
   # ローカル環境用
-  npm run dev
+  pm2 start ecosystem.config.js
+  while true; do sleep 86400; done
 else
   # 本番環境用
   pm2 start ecosystem.config.js
