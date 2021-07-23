@@ -3,17 +3,17 @@
 #
 build-all:
 	docker build --no-cache -t skys-client:nextjs k8s/client/node/docker
-	docker build --no-cache -t skys-client-api:mysql8.0 k8s/api/mysql/docker
-	docker build --no-cache -t skys-client-api:nestjs k8s/api/node/docker
+	docker build --no-cache -t skys-api:mysql8.0 k8s/api/mysql/docker
+	docker build --no-cache -t skys-api:nestjs k8s/api/node/docker
 	docker build --no-cache -t skys-scraper:mysql8.0 k8s/scraper/mysql/docker
 	docker build --no-cache -t skys-scraper:puppeteer-with-nestjs k8s/scraper/node/docker
 
 build-client:
 	docker build --no-cache -t skys-client:nextjs k8s/client/node/docker
 
-build-client-api:
-	docker build --no-cache -t skys-client-api:mysql8.0 k8s/api/mysql/docker
-	docker build --no-cache -t skys-client-api:nestjs k8s/api/node/docker
+build-api:
+	docker build --no-cache -t skys-api:mysql8.0 k8s/api/mysql/docker
+	docker build --no-cache -t skys-api:nestjs k8s/api/node/docker
 
 build-scraper:
 	docker build --no-cache -t skys-scraper:mysql8.0 k8s/scraper/mysql/docker
@@ -24,17 +24,17 @@ build-scraper:
 #
 clean-all:
 	docker rmi skys-client:nextjs
-	docker rmi skys-client-api:nestjs
-	docker rmi skys-client-api:mysql8.0
+	docker rmi skys-api:nestjs
+	docker rmi skys-api:mysql8.0
 	docker rmi skys-scraper:puppeteer-with-nestjs
 	docker rmi skys-scraper:mysql8.0
 
 clean-client:
 	docker rmi skys-client:nextjs
 
-clean-client-api:
-	docker rmi skys-client-api:nestjs
-	docker rmi skys-client-api:mysql8.0
+clean-api:
+	docker rmi skys-api:nestjs
+	docker rmi skys-api:mysql8.0
 
 clean-scraper:
 	docker rmi skys-scraper:puppeteer-with-nestjs
@@ -61,7 +61,7 @@ apply-client:
 	kubectl apply -f k8s/client/node/pod.yml
 	kubectl apply -f k8s/client/node/service.yml
 
-apply-client-api:
+apply-api:
 	kubectl apply -f k8s/api/mysql/configMap.yml
 	kubectl apply -f k8s/api/mysql/deployment.yml
 	kubectl apply -f k8s/api/mysql/service.yml
@@ -96,7 +96,7 @@ delete-client:
 	kubectl delete -f k8s/client/node/pod.yml
 	kubectl delete -f k8s/client/node/service.yml
 
-delete-client-api:
+delete-api:
 	kubectl delete -f k8s/api/mysql/configMap.yml
 	kubectl delete -f k8s/api/mysql/deployment.yml
 	kubectl delete -f k8s/api/mysql/service.yml

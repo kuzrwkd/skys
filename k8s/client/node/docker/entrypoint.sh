@@ -16,10 +16,9 @@ fi
 npm cache clean -f \
 && npm install
 
-if [ "$ENV" == 'local' ]; then
+if [ "$NODE_ENV" == 'development' ]; then
   # ローカル環境用
-  pm2 start ecosystem.config.js
-  while true; do sleep 86400; done
+  npm run dev
 else
   # 本番環境用
   pm2 start ecosystem.config.js

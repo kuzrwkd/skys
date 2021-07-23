@@ -21,7 +21,7 @@ npm cache clean -f \
 
 prisma db seed --preview-feature
 
-if [ "$ENV" == 'local' ]; then
+if [ "$NODE_ENV" == 'development' ]; then
   # ローカル環境用
   npm run start:dev
 else
